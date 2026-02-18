@@ -15,6 +15,12 @@ from keyboard import (
     vosita_button, number_button
 )
 
+from aiogram.client.session.aiohttp import AiohttpSession
+
+
+PROXY_URL = 'http://proxy.server:3128'
+session = AiohttpSession(proxy=PROXY_URL)
+
 
 from states import KvState
 
@@ -22,6 +28,7 @@ TOKEN = "8341724327:AAEqZfFfzQJedNe8OmaX7cP27AG6roFx4ak"
 
 
 dp = Dispatcher(storage=MemoryStorage())
+bot = Bot(token=TOKEN, session=session)
 
 @dp.message(Command('start'))
 async def start(message: types.Message):
@@ -229,7 +236,7 @@ async def kv_qushimcha(message: types.Message, state: FSMContext):
 
 
 async def main() -> None:
-    bot = Bot(token=TOKEN)
+    # bot = Bot(token=TOKEN)
     await dp.start_polling(bot)
 
 
