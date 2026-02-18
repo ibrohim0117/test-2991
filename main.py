@@ -24,7 +24,7 @@ session = AiohttpSession(proxy=PROXY_URL)
 
 from states import KvState
 
-TOKEN = "8341724327:AAEqZfFfzQJedNe8OmaX7cP27AG6roFx4ak"
+TOKEN = "8572413186:AAEOX4uYKixrivLYO-dsrjtnNK-rwn_YkZY"
 
 
 dp = Dispatcher(storage=MemoryStorage())
